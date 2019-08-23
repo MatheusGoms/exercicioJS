@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular-sanitize.js"></script> 62) Escrever um algoritmo para ler dois valores e uma das seguintes operações a serem executadas (codificadas da seguinte
+    forma: 1 – Adição, 2 – Subtração, 3 – Multiplicação e 4 – Divisão). Calcular e escrever o resultado dessa operação sobre
+    os dois valores lidos.
+
+</body>
+
+</body>
+
+<fieldset>
+
+    <div ng-app="ngjs62" ng-controller="ctrl62">
+        <p>
+            <input type="number" ng-model="a">
+        </p>
+        <p>
+            <input type="number" ng-model="b">
+        </p>
+        <p>
+            <select ng-model="operator">
+                <option value= "+">+</option>
+                <option value= "-">-</option>
+                <option value= "*">*</option>
+                <option value= "/">/</option>
+            </select>
+        </p>
+
+
+
+        <div ng-bind="saida()"></div>
+</fieldset>
+
+
+<script>
+    angular.module('ngjs62', [])
+        .controller('ctrl62', function ($scope) {
+            $scope.saida = function () {
+                if ($scope.operator == "+") {
+                    return $scope.a + $scope.b;
+                }
+                if ($scope.operator == "-") {
+                    return $scope.a - $scope.b;
+                }
+                if ($scope.operator == "*") {
+                    return $scope.a * $scope.b;
+                }
+                if ($scope.operator == "/") {
+                    return $scope.a / $scope.b;
+                }
+                // console.log($scope.operator);
+                
+            };
+        });
+
+</script>
